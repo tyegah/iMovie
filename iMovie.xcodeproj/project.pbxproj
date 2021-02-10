@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B764E21425D3FF65008CB679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E21325D3FF65008CB679 /* AppDelegate.swift */; };
-		B764E21625D3FF65008CB679 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E21525D3FF65008CB679 /* SceneDelegate.swift */; };
 		B764E21825D3FF65008CB679 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E21725D3FF65008CB679 /* ViewController.swift */; };
 		B764E21B25D3FF65008CB679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B764E21925D3FF65008CB679 /* Main.storyboard */; };
 		B764E21E25D3FF65008CB679 /* iMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B764E21C25D3FF65008CB679 /* iMovie.xcdatamodeld */; };
@@ -16,6 +15,9 @@
 		B764E22325D3FF68008CB679 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B764E22125D3FF68008CB679 /* LaunchScreen.storyboard */; };
 		B764E22E25D3FF69008CB679 /* iMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E22D25D3FF69008CB679 /* iMovieTests.swift */; };
 		B764E23925D3FF69008CB679 /* iMovieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E23825D3FF69008CB679 /* iMovieUITests.swift */; };
+		B764E26025D40A0F008CB679 /* BaseHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E25D25D40A0F008CB679 /* BaseHTTPClient.swift */; };
+		B764E26125D40A0F008CB679 /* RemoteImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E25E25D40A0F008CB679 /* RemoteImageDataLoader.swift */; };
+		B764E26225D40A0F008CB679 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B764E25F25D40A0F008CB679 /* ImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,6 @@
 /* Begin PBXFileReference section */
 		B764E21025D3FF65008CB679 /* iMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B764E21325D3FF65008CB679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B764E21525D3FF65008CB679 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B764E21725D3FF65008CB679 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B764E21A25D3FF65008CB679 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B764E21D25D3FF65008CB679 /* iMovie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iMovie.xcdatamodel; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		B764E23425D3FF69008CB679 /* iMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B764E23825D3FF69008CB679 /* iMovieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iMovieUITests.swift; sourceTree = "<group>"; };
 		B764E23A25D3FF69008CB679 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B764E25D25D40A0F008CB679 /* BaseHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHTTPClient.swift; sourceTree = "<group>"; };
+		B764E25E25D40A0F008CB679 /* RemoteImageDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageDataLoader.swift; sourceTree = "<group>"; };
+		B764E25F25D40A0F008CB679 /* ImageDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +105,12 @@
 		B764E21225D3FF65008CB679 /* iMovie */ = {
 			isa = PBXGroup;
 			children = (
+				B764E25B25D409DA008CB679 /* Modules */,
+				B764E25A25D409C2008CB679 /* Core */,
+				B764E24D25D3FFD9008CB679 /* Storyboards */,
 				B764E21325D3FF65008CB679 /* AppDelegate.swift */,
-				B764E21525D3FF65008CB679 /* SceneDelegate.swift */,
 				B764E21725D3FF65008CB679 /* ViewController.swift */,
-				B764E21925D3FF65008CB679 /* Main.storyboard */,
 				B764E21F25D3FF68008CB679 /* Assets.xcassets */,
-				B764E22125D3FF68008CB679 /* LaunchScreen.storyboard */,
 				B764E22425D3FF68008CB679 /* Info.plist */,
 				B764E21C25D3FF65008CB679 /* iMovie.xcdatamodeld */,
 			);
@@ -129,6 +133,40 @@
 				B764E23A25D3FF69008CB679 /* Info.plist */,
 			);
 			path = iMovieUITests;
+			sourceTree = "<group>";
+		};
+		B764E24D25D3FFD9008CB679 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B764E21925D3FF65008CB679 /* Main.storyboard */,
+				B764E22125D3FF68008CB679 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B764E25A25D409C2008CB679 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B764E25C25D409F9008CB679 /* API */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B764E25B25D409DA008CB679 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B764E25C25D409F9008CB679 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B764E25D25D40A0F008CB679 /* BaseHTTPClient.swift */,
+				B764E25F25D40A0F008CB679 /* ImageDataLoader.swift */,
+				B764E25E25D40A0F008CB679 /* RemoteImageDataLoader.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B764E26225D40A0F008CB679 /* ImageDataLoader.swift in Sources */,
 				B764E21E25D3FF65008CB679 /* iMovie.xcdatamodeld in Sources */,
+				B764E26125D40A0F008CB679 /* RemoteImageDataLoader.swift in Sources */,
+				B764E26025D40A0F008CB679 /* BaseHTTPClient.swift in Sources */,
 				B764E21825D3FF65008CB679 /* ViewController.swift in Sources */,
 				B764E21425D3FF65008CB679 /* AppDelegate.swift in Sources */,
-				B764E21625D3FF65008CB679 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2FWXW68AX;
 				INFOPLIST_FILE = iMovie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyegah.iMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -462,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T2FWXW68AX;
 				INFOPLIST_FILE = iMovie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,7 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyegah.iMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
