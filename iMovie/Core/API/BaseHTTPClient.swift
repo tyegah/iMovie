@@ -9,6 +9,7 @@ import Foundation
 
 
 let BASE_URL = "https://api.themoviedb.org/3/"
+let API_KEY = "0fe1a635e8636a3e5fd62a3bf61f4f6e"
 let HTTP_STATUS_OK = 200
 
 public protocol HTTPClientTask {

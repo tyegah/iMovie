@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
-        let vc = ViewController()
+        let vc = ModuleBuilder.genreListModule()
         let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         return true
