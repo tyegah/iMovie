@@ -16,6 +16,10 @@ final class MoviesListViewAdapter:MoviesListView {
     
     /// CELL LOADER
     func display(_ viewModel: MoviesListViewModel, router: GenreDetailRouter) {
+        if viewModel.totalPages == viewModel.page {
+            controller?.hideFooter()
+        }
+        
         controller?.display(viewModel.movies.map({ item in
             let adapter = MovieCellPresentationAdapter(model: item)
             let view = MovieCellController(delegate: adapter)

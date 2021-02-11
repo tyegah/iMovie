@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 public class MovieCellPresentationAdapter: MovieCellControllerDelegate {
     private let model: Movie
@@ -47,6 +48,7 @@ public final class MovieCellController: MovieCellView, CollectionCellController 
     
     public func display(_ viewModel: MovieViewModel) {
         cell?.titleLabel.text = viewModel.title
+        cell?.imgView.kf.setImage(with: viewModel.posterURL)
     }
     
     public func didSelectCell() {

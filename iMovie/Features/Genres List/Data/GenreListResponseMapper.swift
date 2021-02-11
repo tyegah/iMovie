@@ -10,8 +10,8 @@ import Foundation
 
 final class GenreListResponseMapper {
     static func map(_ data: Data,_ response: HTTPURLResponse) throws -> [GenreItemResponse] {
-                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                print("RESPONSE \(json)")
+//                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+//                print("RESPONSE \(json)")
         
         var remoteData:GenreListResponse? = nil
         do {

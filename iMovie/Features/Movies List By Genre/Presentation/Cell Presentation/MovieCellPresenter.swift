@@ -18,7 +18,7 @@ public class MovieCellPresenter {
     
     public func loadMovieItem(for model:Movie) {
         view.display(
-            MovieViewModel(adult: model.adult, backdropPath: model.backdropPath, genreIDS: model.genreIDS, id: model.id, originalLanguage: model.originalLanguage, originalTitle: model.originalTitle, overview: model.overview, popularity: model.popularity, posterPath: model.posterPath, releaseDate: model.releaseDate, title: model.title, video: model.video, voteAverage: model.voteAverage, voteCount: model.voteCount)
+            MovieViewModel(adult: model.adult, backdropPath: model.backdropPath, genreIDS: model.genreIDS, id: model.id, originalLanguage: model.originalLanguage, originalTitle: model.originalTitle, overview: model.overview, popularity: model.popularity, posterURL: model.posterURL!, releaseDate: model.releaseDate, title: model.title, video: model.video, voteAverage: model.voteAverage, voteCount: model.voteCount)
         )
     }
     

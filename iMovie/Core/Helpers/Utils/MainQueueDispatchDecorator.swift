@@ -34,8 +34,8 @@ extension MainQueueDispatchDecorator: GenreListLoader where T == GenreListLoader
 }
 
 extension MainQueueDispatchDecorator: DiscoverListLoader where T == DiscoverListLoader {
-    func loadDiscoverList(genreId: Int, completion: @escaping (DiscoverListLoader.Result) -> Void) {
-        decoratee.loadDiscoverList(genreId: genreId) { [weak self] result in
+    func loadDiscoverList(genreId: Int,page:Int, completion: @escaping (DiscoverListLoader.Result) -> Void) {
+        decoratee.loadDiscoverList(genreId: genreId, page:page) { [weak self] result in
             self?.dispatch {
                 completion(result)
             }

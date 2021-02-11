@@ -18,8 +18,8 @@ final class DiscoverListRemoteLoader:DiscoverListLoader {
         self.client = client
     }
     
-    func loadDiscoverList(genreId:Int, completion: @escaping (Result) -> Void) {
-        let url = "\(DISCOVER_LIST_URL)?api_key=\(API_KEY)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_Discovers=\(genreId)"
+    func loadDiscoverList(genreId:Int,page:Int, completion: @escaping (Result) -> Void) {
+        let url = "\(DISCOVER_LIST_URL)?api_key=\(API_KEY)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(page)&with_Discovers=\(genreId)"
         debugPrint("URL \(url)")
         client.get(url, params: nil, headers: nil) { result in
             switch result {

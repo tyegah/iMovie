@@ -10,8 +10,8 @@ import Foundation
 
 final class DiscoverListResponseMapper {
     static func map(_ data: Data,_ response: HTTPURLResponse) throws -> DiscoverResponse {
-                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                print("RESPONSE \(json)")
+//                 let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+//                print("RESPONSE \(json)")
         
         var remoteData:DiscoverResponse? = nil
         do {

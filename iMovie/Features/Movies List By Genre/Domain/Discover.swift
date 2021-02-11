@@ -27,4 +27,8 @@ public struct Movie: Equatable {
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    
+    var posterURL:URL? {
+        return URL(string:"https://image.tmdb.org/t/p/w500\(posterPath)")
+    }
 }

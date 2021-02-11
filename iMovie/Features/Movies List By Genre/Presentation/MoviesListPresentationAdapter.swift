@@ -9,7 +9,6 @@ import Foundation
 
 final class MoviesListPresentationAdapter: MoviesListCollectionViewControllerDelegate {
     private var page:Int = 1
-    private var maxPage:Int = 0
     var presenter: MoviesListPresenter?
     private let genreId:Int
     private let remoteLoader: DiscoverListLoader
@@ -19,8 +18,9 @@ final class MoviesListPresentationAdapter: MoviesListCollectionViewControllerDel
         self.genreId = genreId
     }
     
-    func loadMovies(refresh: Bool) {
-        remoteLoader.loadDiscoverList(genreId: genreId) {[weak self] result in
+    func loadMovies(refresh: Bool, isNextPage:Bool) {
+        page = isNextPage ? page + 1 : page
+        remoteLoader.loadDiscoverList(genreId: genreId, page: page) {[weak self] result in
             guard let self = self else {
                 return
             }
