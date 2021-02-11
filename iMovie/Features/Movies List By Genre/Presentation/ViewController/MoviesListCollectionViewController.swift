@@ -7,7 +7,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
 public protocol MoviesListCollectionViewControllerDelegate {
     func loadMovies(refresh:Bool, isNextPage:Bool)
@@ -23,8 +22,6 @@ public class MoviesListCollectionViewController: UICollectionViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         delegate?.loadMovies(refresh: true, isNextPage: false)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
         collectionView!.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
@@ -32,9 +29,7 @@ public class MoviesListCollectionViewController: UICollectionViewController {
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
         layout.itemSize = CGSize(width: 180, height: 250)
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         layout.footerReferenceSize = CGSize(width: self.view.frame.width, height: 60)
-        // Do any additional setup after loading the view.
     }
     
     private func cellController(forRowAt indexPath: IndexPath) -> CollectionCellController {
@@ -70,20 +65,39 @@ public class MoviesListCollectionViewController: UICollectionViewController {
         }
     }
     
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = collectionModels[indexPath.row]
+        controller.didSelectCell()
+    }
+    
     public override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionFooter && shouldShowFooter {
+        if kind == UICollectionView.elementKindSectionFooter {
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterCollectionReusableView", for: indexPath)
-            let loading = UIActivityIndicatorView()
-            loading.style = .gray
-            loading.tintColor = UIColor.gray
-            loading.tag = 111
-            footerView.addSubview(loading)
-            loading.center = footerView.center
-            loading.startAnimating()
+            if shouldShowFooter {
+                let loading = UIActivityIndicatorView()
+                loading.style = .gray
+                loading.tintColor = UIColor.gray
+                loading.tag = 111
+                footerView.addSubview(loading)
+                loading.center = footerView.center
+                loading.startAnimating()
+            }
+            else {
+                let view = footerView.viewWithTag(111)
+                view?.removeFromSuperview()
+            }
+            
             return footerView
         }
         
         fatalError("Unexpected element kind")
+    }
+    
+    @objc private func retry() {
+        shouldShowFooter = true
+        collectionView.reloadData()
+        delegate?.loadMovies(refresh: true, isNextPage: false)
+        hideRefreshView()
     }
 }
 
@@ -93,10 +107,11 @@ extension MoviesListCollectionViewController:LoadingView, ErrorView {
     }
     
     public func display(_ viewModel: ErrorViewModel) {
-        //        guard let message = viewModel.message else {
-        //            return
-        //        }
-        //
-        //        showRefreshView(self, onRetry: #selector(retry), message: message)
+        guard let message = viewModel.message else {
+            return
+        }
+        hideFooter()
+        collectionView.reloadData()
+        showRefreshView(self, onRetry: #selector(retry), message: message)
     }
 }

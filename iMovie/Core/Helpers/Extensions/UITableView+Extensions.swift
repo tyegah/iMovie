@@ -71,7 +71,7 @@ extension UIViewController {
         refreshView.widthAnchor.constraint(equalToConstant: self.view.frame.size.width - 32).isActive = true
         refreshView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
         refreshView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
-        refreshView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: self.view.frame.size.height/2 - 160).isActive = true
+        refreshView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: self.view.frame.size.height/2 - 120).isActive = true
         refreshView.retryButton.addTarget(target, action: onRetry, for: .touchUpInside)
         refreshView.messageLabel.text = message
         self.view.bringSubviewToFront(refreshView)

@@ -13,7 +13,10 @@ protocol MovieDetailRoute {
 
 extension MovieDetailRoute where Self: RouterProtocol  {
     func onMovieClick(id: Int) {
-
+        let module = MovieDetailsModule(id)
+        let transition = PushTransition()
+        module.router.openTransition = transition
+        open(module.viewController, transition: transition)
     }
 }
 

@@ -14,16 +14,7 @@ public struct MoviesListViewModel {
 }
 
 public struct MovieViewModel {
-    let adult: Bool
-    let backdropPath: String
-    let genreIDS: [Int]
     let id: Int
-    let originalLanguage: String
-    let originalTitle, overview: String
-    let popularity: Double
     let posterURL:URL
-    let releaseDate, title: String
-    let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+    let title: String
 }

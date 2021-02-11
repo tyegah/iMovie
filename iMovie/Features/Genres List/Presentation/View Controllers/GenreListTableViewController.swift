@@ -26,6 +26,7 @@ public class GenreListTableViewController: UITableViewController {
     // MARK: - Helper
     @objc func refresh(_ refresh:Bool) {
         delegate?.loadGenres(refresh: refresh)
+        hideRefreshView()
     }
     
     private func setupUI() {

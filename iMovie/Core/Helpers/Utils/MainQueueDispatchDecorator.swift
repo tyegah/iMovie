@@ -42,3 +42,13 @@ extension MainQueueDispatchDecorator: DiscoverListLoader where T == DiscoverList
         }
     }
 }
+
+extension MainQueueDispatchDecorator: MovieDetailsLoader where T == MovieDetailsLoader {
+    func loadMovieDetails(id: Int, completion: @escaping (MovieDetailsLoader.Result) -> Void) {
+        decoratee.loadMovieDetails(id: id) { [weak self] result in
+            self?.dispatch {
+                completion(result)
+            }
+        }
+    }
+}

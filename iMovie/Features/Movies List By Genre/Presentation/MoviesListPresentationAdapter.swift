@@ -19,7 +19,7 @@ final class MoviesListPresentationAdapter: MoviesListCollectionViewControllerDel
     }
     
     func loadMovies(refresh: Bool, isNextPage:Bool) {
-        page = isNextPage ? page + 1 : page
+        page = isNextPage && !refresh ? page + 1 : page
         remoteLoader.loadDiscoverList(genreId: genreId, page: page) {[weak self] result in
             guard let self = self else {
                 return
