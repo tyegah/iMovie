@@ -8,12 +8,15 @@
 import Foundation
 
 protocol GenreDetailRoute {
-    func onGenreClick(id: Int)
+    func onGenreClick(_ viewModel: GenreViewModel)
 }
 
 extension GenreDetailRoute where Self: RouterProtocol  {
-    func onGenreClick(id: Int) {
-
+    func onGenreClick(_ viewModel: GenreViewModel) {
+        let module = GenreDetailModule(viewModel)
+        let transition = PushTransition()
+        module.router.openTransition = transition
+        open(module.viewController, transition: transition)
     }
 }
 

@@ -26,6 +26,6 @@ public class GenreCellPresenter {
     }
     
     public func didSelectGenre(for model:Genre) {
-        router.onGenreClick(id: model.id)
+        router.onGenreClick(GenreViewModel(id: model.id, name: model.name))
     }
 }

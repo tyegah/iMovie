@@ -19,6 +19,12 @@ extension UITableView {
     }
 }
 
+extension UIStoryboard {
+    func instantiateVC(_ type: UIViewController.Type) -> UIViewController {
+        self.instantiateViewController(withIdentifier: String(describing: type.self))
+    }
+}
+
 extension UIViewController {
     @objc func toggleLoadingView(_ isLoading: Bool) {
         if isLoading {

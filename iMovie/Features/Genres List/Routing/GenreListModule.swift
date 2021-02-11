@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-extension UIStoryboard {
-    func main() -> UIStoryboard {
+final class Storyboard {
+    static func main() -> UIStoryboard {
         return UIStoryboard.init(name: "Main", bundle: nil)
     }
 }
@@ -22,7 +22,7 @@ final class GenreListModule {
         let remoteLoader = GenreListRemoteLoader(client: URLSessionClient(session: URLSession.shared))
         let presentationAdapter = GenreListPresentationAdapter(remoteLoader: MainQueueDispatchDecorator(decoratee: remoteLoader))
         let router = GenreListRouter()
-        let viewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"GenreListTableViewController") as! GenreListTableViewController
+        let viewController = Storyboard.main().instantiateVC(GenreListTableViewController.self) as! GenreListTableViewController
         viewController.delegate = presentationAdapter
         router.viewController = viewController
         presentationAdapter.presenter = GenreListPresenter(view: GenreListViewAdapter(controller: viewController),
