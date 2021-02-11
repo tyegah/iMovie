@@ -15,6 +15,9 @@ public protocol MoviesListCollectionViewControllerDelegate {
 
 public class MoviesListCollectionViewController: UICollectionViewController {
     public var delegate: MoviesListCollectionViewControllerDelegate?
+    private var collectionModels = [CollectionCellController]() {
+        didSet { collectionView.reloadData() }
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,10 @@ public class MoviesListCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+        collectionView!.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
+        let layout = UICollectionViewFlowLayout()
+        collectionView.collectionViewLayout = layout
+        layout.itemSize = CGSize(width: 180, height: 250)
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
@@ -37,26 +44,28 @@ public class MoviesListCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func cellController(forRowAt indexPath: IndexPath) -> CollectionCellController {
+        return collectionModels[indexPath.row]
+    }
+    
+    public func display(_ cellControllers: [CollectionCellController]) {
+        collectionModels.append(contentsOf: cellControllers)
+    }
 
     // MARK: UICollectionViewDataSource
 
     override public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return collectionModels.count
     }
 
     override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        cellController(forRowAt: indexPath).view(in: collectionView, indexPath: indexPath)
     }
 
     // MARK: UICollectionViewDelegate

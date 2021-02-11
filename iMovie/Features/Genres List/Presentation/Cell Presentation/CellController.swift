@@ -7,6 +7,11 @@
 
 import UIKit
 
+public protocol CollectionCellController {
+    func view(in collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
+    func didSelectCell()
+}
+
 public protocol CellController {
     func view(in tableView: UITableView) -> UITableViewCell
     func didSelectCell()

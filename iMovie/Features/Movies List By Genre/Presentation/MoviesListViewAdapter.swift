@@ -16,6 +16,11 @@ final class MoviesListViewAdapter:MoviesListView {
     
     /// CELL LOADER
     func display(_ viewModel: MoviesListViewModel, router: GenreDetailRouter) {
-
+        controller?.display(viewModel.movies.map({ item in
+            let adapter = MovieCellPresentationAdapter(model: item)
+            let view = MovieCellController(delegate: adapter)
+            adapter.presenter = MovieCellPresenter(view: WeakRefVirtualProxy(view), router: router)
+            return view
+        }))
     }
 }

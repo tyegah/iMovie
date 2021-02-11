@@ -8,7 +8,7 @@
 import Foundation
 
 public struct MoviesListViewModel {
-    let movies:[MovieViewModel]
+    let movies:[Movie]
     let totalPages: Int
     let page:Int
 }

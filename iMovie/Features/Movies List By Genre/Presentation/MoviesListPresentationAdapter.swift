@@ -27,7 +27,7 @@ final class MoviesListPresentationAdapter: MoviesListCollectionViewControllerDel
             
             switch result {
             case .success(let data):
-                self.presenter?.didLoadMovies(MoviesListViewModel(movies: data.results.map { MovieViewModel(adult: $0.adult, backdropPath: $0.backdropPath, genreIDS: $0.genreIDS, id: $0.id, originalLanguage: $0.originalLanguage, originalTitle: $0.originalTitle, overview: $0.overview, popularity: $0.popularity, posterPath: $0.posterPath, releaseDate: $0.releaseDate, title: $0.title, video: $0.video, voteAverage: $0.voteAverage, voteCount: $0.voteCount)}, totalPages: data.totalPages, page: data.page))
+                self.presenter?.didLoadMovies(MoviesListViewModel(movies: data.results, totalPages: data.totalPages, page: data.page))
             case .failure(let error):
                 self.presenter?.didLoadMovies(with: error)
             }

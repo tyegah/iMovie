@@ -19,6 +19,13 @@ extension UITableView {
     }
 }
 
+extension UICollectionView {
+    func dequeueReusableCell<T: UICollectionViewCell>(for indexPath:IndexPath) -> T {
+        let identifier = String(describing: T.self)
+        return dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! T
+    }
+}
+
 extension UIStoryboard {
     func instantiateVC(_ type: UIViewController.Type) -> UIViewController {
         self.instantiateViewController(withIdentifier: String(describing: type.self))

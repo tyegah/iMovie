@@ -22,6 +22,12 @@ extension WeakRefVirtualProxy: GenreCellView where T: GenreCellView {
     }
 }
 
+extension WeakRefVirtualProxy: MovieCellView where T: MovieCellView {
+    func display(_ viewModel: MovieViewModel) {
+        object?.display(viewModel)
+    }
+}
+
 extension WeakRefVirtualProxy: ErrorView where T: ErrorView {
     func display(_ viewModel: ErrorViewModel) {
         object?.display(viewModel)

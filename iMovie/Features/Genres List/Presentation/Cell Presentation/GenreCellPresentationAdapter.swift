@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+public protocol GenreCellControllerDelegate {
+    func loadGenreItem()
+    func didSelectGenre()
+}
+
 public class GenreCellPresentationAdapter: GenreCellControllerDelegate {
     private let model: Genre
     var presenter: GenreCellPresenter?
@@ -24,11 +29,6 @@ public class GenreCellPresentationAdapter: GenreCellControllerDelegate {
         presenter?.loadGenreItem(for: model)
     }
     
-}
-
-public protocol GenreCellControllerDelegate {
-    func loadGenreItem()
-    func didSelectGenre()
 }
 
 public final class GenreCellController: GenreCellView, CellController {
