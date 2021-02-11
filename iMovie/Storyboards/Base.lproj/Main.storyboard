@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,16 +51,7 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9iI-N4-XO3">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wdu-CS-tvl">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="kPy-xC-0Oe" id="zCO-e8-PRj"/>
                             <outlet property="delegate" destination="kPy-xC-0Oe" id="Bie-Zi-IVr"/>
@@ -80,84 +70,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MoviewDetailsHeaderInfoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoviewDetailsHeaderInfoCell" rowHeight="417" id="vwT-zS-Th1" customClass="MoviewDetailsHeaderInfoCell" customModule="iMovie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="417"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vwT-zS-Th1" id="CBn-dH-pfd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="417"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cn-R2-w8S">
-                                            <rect key="frame" x="16" y="16" width="382" height="28"/>
-                                            <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r29-2Q-qft">
-                                            <rect key="frame" x="0.0" y="60" width="414" height="180"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="180" id="c2H-E6-LI0"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-FN-QT8">
-                                            <rect key="frame" x="16" y="256" width="382" height="20"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkZ-pH-qwW">
-                                            <rect key="frame" x="16" y="292" width="382" height="20"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Release Date" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40r-eT-SPX">
-                                            <rect key="frame" x="16" y="328" width="382" height="20"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHM-s0-oku">
-                                            <rect key="frame" x="16" y="364" width="382" height="33"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="pHM-s0-oku" firstAttribute="top" secondItem="40r-eT-SPX" secondAttribute="bottom" constant="16" id="2Kx-Gz-9Rh"/>
-                                        <constraint firstItem="40r-eT-SPX" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" constant="16" id="3zF-mM-KKv"/>
-                                        <constraint firstItem="8Cn-R2-w8S" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" constant="16" id="4ZT-ah-g7r"/>
-                                        <constraint firstAttribute="trailing" secondItem="40r-eT-SPX" secondAttribute="trailing" constant="16" id="4se-P7-K5z"/>
-                                        <constraint firstAttribute="trailing" secondItem="mkZ-pH-qwW" secondAttribute="trailing" constant="16" id="6sC-Ip-Yva"/>
-                                        <constraint firstAttribute="trailing" secondItem="pHM-s0-oku" secondAttribute="trailing" constant="16" id="BGg-Ty-8Ul"/>
-                                        <constraint firstAttribute="trailing" secondItem="8Cn-R2-w8S" secondAttribute="trailing" constant="16" id="Dcu-i5-13g"/>
-                                        <constraint firstItem="pHM-s0-oku" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" constant="16" id="JtI-Ok-hco"/>
-                                        <constraint firstItem="mkZ-pH-qwW" firstAttribute="top" secondItem="Kwh-FN-QT8" secondAttribute="bottom" constant="16" id="KfU-nL-Oon"/>
-                                        <constraint firstItem="r29-2Q-qft" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" id="Xj4-LE-z4e"/>
-                                        <constraint firstItem="mkZ-pH-qwW" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" constant="16" id="Z4C-Bv-Oed"/>
-                                        <constraint firstItem="r29-2Q-qft" firstAttribute="top" secondItem="8Cn-R2-w8S" secondAttribute="bottom" constant="16" id="b6o-eH-b9y"/>
-                                        <constraint firstItem="8Cn-R2-w8S" firstAttribute="top" secondItem="CBn-dH-pfd" secondAttribute="top" constant="16" id="b9l-8d-PfS"/>
-                                        <constraint firstItem="Kwh-FN-QT8" firstAttribute="top" secondItem="r29-2Q-qft" secondAttribute="bottom" constant="16" id="fFe-SU-zKH"/>
-                                        <constraint firstAttribute="bottom" secondItem="pHM-s0-oku" secondAttribute="bottom" constant="20" id="gQb-wf-Qgj"/>
-                                        <constraint firstAttribute="trailing" secondItem="r29-2Q-qft" secondAttribute="trailing" id="iba-Qb-N3L"/>
-                                        <constraint firstItem="r29-2Q-qft" firstAttribute="top" secondItem="8Cn-R2-w8S" secondAttribute="bottom" constant="16" id="oGr-z6-jAk"/>
-                                        <constraint firstItem="40r-eT-SPX" firstAttribute="top" secondItem="mkZ-pH-qwW" secondAttribute="bottom" constant="16" id="pAz-Px-bU5"/>
-                                        <constraint firstItem="Kwh-FN-QT8" firstAttribute="leading" secondItem="CBn-dH-pfd" secondAttribute="leading" constant="16" id="vRm-Lf-J0P"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kwh-FN-QT8" secondAttribute="trailing" constant="16" id="ztp-vz-fwm"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="genreLabel" destination="Kwh-FN-QT8" id="96l-O4-oqG"/>
-                                    <outlet property="imgView" destination="r29-2Q-qft" id="t2n-TK-x1L"/>
-                                    <outlet property="movieTitleLabel" destination="8Cn-R2-w8S" id="xXY-RS-sqX"/>
-                                    <outlet property="overviewLabel" destination="mkZ-pH-qwW" id="0dx-ST-g0T"/>
-                                    <outlet property="ratingLabel" destination="pHM-s0-oku" id="rwK-Hp-Ho6"/>
-                                    <outlet property="releaseDateLabel" destination="40r-eT-SPX" id="DOT-cR-pj8"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Biy-qg-BCW" id="Tj8-00-J1q"/>
                             <outlet property="delegate" destination="Biy-qg-BCW" id="zgG-pJ-cte"/>

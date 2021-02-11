@@ -8,7 +8,7 @@
 import Foundation
 
 public struct MovieDetailsViewModel {
-    let genres: [String]
+    let genres: String
     let id: Int
     let overview: String
     let posterURL: URL?

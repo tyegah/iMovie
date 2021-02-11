@@ -1,5 +1,5 @@
 //
-//  MoviewDetailsHeaderInfoCell.swift
+//  MovieDetailsTableViewCell.swift
 //  iMovie
 //
 //  Created by UN A on 11/02/21.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-class MoviewDetailsHeaderInfoCell: UITableViewCell {
+class MovieDetailsTableViewCell: UITableViewCell {
+
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +25,5 @@ class MoviewDetailsHeaderInfoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

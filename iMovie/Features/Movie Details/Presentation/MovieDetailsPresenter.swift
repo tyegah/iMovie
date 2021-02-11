@@ -28,8 +28,8 @@ final class MovieDetailsPresenter {
         errorView.display(ErrorViewModel.retryError(message: message))
     }
     
-    func didLoadMovieDetails(_ viewModel:MovieDetailsViewModel) {
+    func didLoadMovieDetails(_ model:MovieDetails) {
         loadingView.display(LoadingViewModel(isLoading: false))
-        view.display(viewModel)
+        view.display(model)
     }
 }

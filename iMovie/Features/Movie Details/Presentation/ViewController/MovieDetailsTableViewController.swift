@@ -23,7 +23,7 @@ public class MovieDetailsTableViewController: UITableViewController {
     }
     
     private func setupUI() {
-        tableView.registerCell(MoviewDetailsHeaderInfoCell.self)
+        tableView.registerCell(MovieDetailsTableViewCell.self)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
     

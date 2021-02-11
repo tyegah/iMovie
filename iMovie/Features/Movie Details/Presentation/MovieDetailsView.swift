@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol MovieDetailsView {
-    func display(_ viewModel: MovieDetailsViewModel)
+    func display(_ model: MovieDetails) 
 }

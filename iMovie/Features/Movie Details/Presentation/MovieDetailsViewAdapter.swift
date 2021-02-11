@@ -15,12 +15,11 @@ final class MovieDetailsViewAdapter:MovieDetailsView {
     }
     
     /// CELL LOADER
-    func display(_ viewModel: MovieDetailsViewModel) {
-//        controller?.display(viewModel.movies.map({ item in
-//            let adapter = MovieCellPresentationAdapter(model: item)
-//            let view = MovieCellController(delegate: adapter)
-//            adapter.presenter = MovieCellPresenter(view: WeakRefVirtualProxy(view), router: router)
-//            return view
-//        }))
+    func display(_ model: MovieDetails) {
+        let adapter = MovieDetailsCellPresentationAdapter(model: model)
+        let view = MovieDetailsCellController(delegate: adapter)
+        adapter.presenter = MovieDetailsCellPresenter(view: WeakRefVirtualProxy(view))
+        let controllers = [view]
+        controller?.display(controllers)
     }
 }

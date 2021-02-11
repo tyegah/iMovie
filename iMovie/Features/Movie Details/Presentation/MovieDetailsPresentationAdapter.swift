@@ -25,7 +25,7 @@ final class MovieDetailsPresentationAdapter: MovieDetailsTableViewControllerDele
             
             switch result {
             case .success(let data):
-                self.presenter?.didLoadMovieDetails(MovieDetailsViewModel(genres: data.genres.map {$0.name}, id: data.id, overview: data.overview, posterURL: data.posterURL, releaseDate: "", title: data.title, rating: "Rating : \(data.voteAverage)/10", duration: "\(data.runtime) minutes"))
+                self.presenter?.didLoadMovieDetails(data)
             case .failure(let error):
                 self.presenter?.didLoadMovieDetails(with: error)
             }
