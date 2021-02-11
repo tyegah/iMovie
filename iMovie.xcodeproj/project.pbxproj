@@ -295,6 +295,10 @@
 		B764E26825D40E34008CB679 /* Movie Details */ = {
 			isa = PBXGroup;
 			children = (
+				B7B5B48E25D52F8600187751 /* Routing */,
+				B7B5B48C25D52F7600187751 /* Presentation */,
+				B7B5B48D25D52F7B00187751 /* Domain */,
+				B7B5B48B25D52F7100187751 /* Data */,
 			);
 			path = "Movie Details";
 			sourceTree = "<group>";
@@ -494,6 +498,34 @@
 				B7B5B48125D5276600187751 /* FooterCollectionReusableView.swift */,
 			);
 			path = "Cell Presentation";
+			sourceTree = "<group>";
+		};
+		B7B5B48B25D52F7100187751 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B7B5B48C25D52F7600187751 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B7B5B48D25D52F7B00187751 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B7B5B48E25D52F8600187751 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
